@@ -10,13 +10,11 @@ namespace OnlineShopingStore.model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+        public int Price { get; set; }
+        public int Brand { get; set; }
+        public int Quantity { get; set; }
 
-
-        public int id;
-        public string name;
-        public string desc;
-        public int price;
-        public int quantity;
         List<product_review> product_reviews = new List<product_review>();
     }
 }

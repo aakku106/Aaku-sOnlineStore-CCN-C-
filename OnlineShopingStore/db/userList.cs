@@ -19,6 +19,7 @@ namespace OnlineShopingStore.db
                 Email = "weeee@ccn.com",
                 Password = "1234",
                 Address = "konoka7",
+               
             },
             new user()
             {

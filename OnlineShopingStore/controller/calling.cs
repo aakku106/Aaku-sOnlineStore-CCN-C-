@@ -8,6 +8,7 @@ namespace OnlineShopingStore.controller
 {
     public class calling
     {
+        int choice;
 
         public void welcomeMessage()
         {
@@ -24,6 +25,52 @@ namespace OnlineShopingStore.controller
             Console.WriteLine(options);
         }
 
+        public void processOptions()
+        {
+            
+            do
+            {
+                choicee();
+                switch (choice)
+                {
+                    case 0:
+                        printOptions();
+                        break;
+                    case 1:
+                        addProduct();
+                        break;
+                    case 2:
+                        removeProduct();
+                        break;
+                    case 3:
+                        updateProduct();
+                        break;
+                    case 4:
+                        searchProduct();
+                        break;
+                    case 5:
+                        addReview();
+                        break;
+                    case 6:
+                        removeReview();
+                        break;
+                    case 7:
+                        updateReview();
+                        break;
+                    case 8:
+                        Console.WriteLine("Thank you for shopping with us");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice");
+                        break;
+                }
+            } while (choice >9);
+        }
+
+        public void productList()
+        {
+            Console.WriteLine("Product List");
+        }
 
         public void addProduct()
         {
@@ -53,6 +100,26 @@ namespace OnlineShopingStore.controller
         {
             Console.WriteLine("Review updated");
         }
-        
+
+        public int choicee()
+        {
+            Console.WriteLine($@"Enter your choice
+            0. Print Options
+            1. Add Product
+            2. Remove Product
+            3. Update Product
+            4. Search Product
+            5. Add Review
+            6. Remove Review
+            7. Update Review
+            8. Exit
+
+
+");
+
+             choice = Convert.ToInt32(Console.ReadLine());
+            return choice;
+        }
+
     }
 }
