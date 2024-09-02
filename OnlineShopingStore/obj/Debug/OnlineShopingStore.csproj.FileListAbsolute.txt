@@ -1,0 +1,7 @@
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\bin\Debug\OnlineShopingStore.exe.config
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\bin\Debug\OnlineShopingStore.exe
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\bin\Debug\OnlineShopingStore.pdb
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\obj\Debug\OnlineShopingStore.csproj.AssemblyReference.cache
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\obj\Debug\OnlineShopingStore.csproj.CoreCompileInputs.cache
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\obj\Debug\OnlineShopingStore.exe
+C:\Users\seva\source\repos\OnlineShopingStore\OnlineShopingStore\obj\Debug\OnlineShopingStore.pdb
