@@ -15,6 +15,6 @@ namespace OnlineShopingStore.model
         public object Brand { get; set; }
         public int Quantity { get; set; }
 
-        List<product_review> product_reviews = new List<product_review>();
+        
     }
 }

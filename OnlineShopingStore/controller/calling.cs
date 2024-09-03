@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineShopingStore.db;
+using OnlineShopingStore.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +32,7 @@ namespace OnlineShopingStore.controller
                 switch (choice)
                 {
                     case 0:
-                        productList();
+                        productListii();
                         break;
                     case 1:
                         addProduct();
@@ -42,7 +44,7 @@ namespace OnlineShopingStore.controller
                         updateProduct();
                         break;
                     case 4:
-                        searchProduct();
+                        showReview();
                         break;
                     case 5:
                         addReview();
@@ -76,33 +78,101 @@ namespace OnlineShopingStore.controller
             } while (choice != 8);
         }
 
-        public void productList()
+        public void productListii()
         {
-            Console.WriteLine("Product List");
+            //Console.WriteLine("Product List");
+            foreach (var product in productList.products)
+            {
+                Console.WriteLine(
+                    $"Id: {product.Id} " +
+                    $"Name: {product.Name}" +
+                    $" Price: {product.Price}" +
+                    $" Brand: {product.Brand}" +
+                    $" Quantity: {product.Quantity}"
+                    );
+            }
         }
 
         public void addProduct()
         {
+            Console.WriteLine("Enter product name");
+            string name = Console.ReadLine();
+            Console.WriteLine("Enter product description");
+            string description = Console.ReadLine();
+            Console.WriteLine("Enter product price");
+            int price = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter product brand");
+            object brand = Console.ReadLine();
+            Console.WriteLine("Enter quantity of product ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+
+            productList.products.Add(new model.product()
+            {
+                Id = productList.products.Count + 1,
+                Name = name,
+                Description = description,
+                Price = price,
+                Brand = brand,
+                Quantity = quantity
+            });
+
+
             Console.WriteLine("Product added");
         }
         public void removeProduct()
         {
+            Console.WriteLine("Enter product id to remove");
+            int id = Convert.ToInt32(Console.ReadLine());
+            productList.products.RemoveAll(x => x.Id == id);
+
             Console.WriteLine("Product removed");
         }
         public void updateProduct()
         {
-            Console.WriteLine("Product updated");
+            //Console.WriteLine("Product updated");
         }
-        public void searchProduct()
+        public void showReview()
         {
-            Console.WriteLine("Product searched");
+
+            foreach (var review in product_review.product_reviews)
+            {
+                Console.WriteLine(
+                    $"Id: {review.Id} " +
+                    $"Rating: {review.Prod_Rating}" +
+                    $" Review: {review.Prod_Review}" +
+                    $" Review Date: {review.Prod_Review_Date}"
+                    );
+            }
+
         }
         public void addReview()
         {
+
+            Console.WriteLine("Enter product id to add review");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter product rating");
+            double rating = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter product review");
+            string review = Console.ReadLine();
+            Console.WriteLine("Enter review date");
+            string reviewDate = Console.ReadLine();
+            
+            product_review.product_reviews.Add(new product_review()
+            {
+                Id = id,
+                Prod_Rating = rating,
+                Prod_Review = review,
+                Prod_Review_Date = reviewDate
+            });
+
             Console.WriteLine("Review added");
         }
         public void removeReview()
         {
+
+            Console.WriteLine("Enter review id to remove");
+            int id = Convert.ToInt32(Console.ReadLine());
+            product_review.product_reviews.RemoveAll(x => x.Id == id);
             Console.WriteLine("Review removed");
         }
         public void updateReview()

@@ -14,6 +14,5 @@ namespace OnlineShopingStore.model
         public string Password { get; set; }
         public string Address { get; set; }
 
-        public List<product> products = new List<product>();
     }
 }
