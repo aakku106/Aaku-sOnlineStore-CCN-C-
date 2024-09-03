@@ -37,13 +37,14 @@ namespace OnlineShopingStore.controller
 
                         break;
                     case 2:
+                        Console.WriteLine("Aarigatto dattebyoo!!!");
                         Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
                         break;
                 }
-            } while (choice>2);
+            } while (choice != 2);
 
         }
 

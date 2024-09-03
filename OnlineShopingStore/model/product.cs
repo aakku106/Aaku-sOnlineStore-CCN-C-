@@ -12,7 +12,7 @@ namespace OnlineShopingStore.model
         public string Name { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
-        public int Brand { get; set; }
+        public object Brand { get; set; }
         public int Quantity { get; set; }
 
         List<product_review> product_reviews = new List<product_review>();
