@@ -19,7 +19,7 @@ namespace OnlineShopingStore.controller
             // ??
             Console.WriteLine("Are you new user<yes/not>");
             string checkNewUser =  Console.ReadLine();
-            if(checkNewUser.ToUpper() == "YES")
+            if(checkNewUser.ToUpper() == "YES" || checkNewUser.ToUpper()== "Y")
             {
                 register();
             }
@@ -27,6 +27,7 @@ namespace OnlineShopingStore.controller
             Console.WriteLine("2. Exit");
             Console.WriteLine("Enter your choice");
             int choice = Convert.ToInt32(Console.ReadLine());
+                       
             do
             {
                 switch (choice)
@@ -42,9 +43,10 @@ namespace OnlineShopingStore.controller
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
+
                         break;
                 }
-            } while (choice != 2);
+            } while ( choice != 3);
 
         }
 
@@ -52,6 +54,9 @@ namespace OnlineShopingStore.controller
         {
             calling c = new calling();
             c.welcomeMessage();
+            //logIn();
+
+
             Console.ReadLine();
         }
 
@@ -93,8 +98,14 @@ namespace OnlineShopingStore.controller
                 Address = address
             });
         }
+        int countiNoTimeOfLoginno = 0;
         public void logIn()
         {
+            int countemail = 0;
+            if (countiNoTimeOfLoginno > 1)
+            {
+                Login();
+            }
             Console.WriteLine("Enter your email");
             string email1 = Console.ReadLine();
             Console.WriteLine("Enter your password");
@@ -104,11 +115,19 @@ namespace OnlineShopingStore.controller
             if (user != null)
             {
                 Console.WriteLine("Login success");
+                ++ countiNoTimeOfLoginno;
+               
                 calling();
             }
             else
             {
                 Console.WriteLine("Login failed");
+                countemail ++;
+                if (countemail > 3)
+                {
+                    Console.WriteLine("You have exceeded the maximum number of attempts");
+                    Environment.Exit(0);
+                }
             }
         }
 

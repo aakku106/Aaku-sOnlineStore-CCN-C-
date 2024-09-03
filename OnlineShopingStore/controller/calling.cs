@@ -14,16 +14,12 @@ namespace OnlineShopingStore.controller
         {
             Console.WriteLine("Welcome to the CCN  Online Shopping Store Dattebyoo!!!");
 
-            printOptions();
+            //choicee();
+            processOptions();
 
 
         }
 
-         public void printOptions()
-        {
-            const string options = "1. Add Product\n2. Remove Product\n3. Update Product\n4. Search Product\n5. Add Review\n6. Remove Review\n7. Update Review\n8. Exit";
-            Console.WriteLine(options);
-        }
 
         public void processOptions()
         {
@@ -34,7 +30,7 @@ namespace OnlineShopingStore.controller
                 switch (choice)
                 {
                     case 0:
-                        printOptions();
+                        productList();
                         break;
                     case 1:
                         addProduct();
@@ -59,12 +55,25 @@ namespace OnlineShopingStore.controller
                         break;
                     case 8:
                         Console.WriteLine("Thank you for shopping with us");
+                        Console.WriteLine("Do you want to continue shopping<yes/no>");
+                        string choice = Console.ReadLine();
+                        if (choice.ToUpper() == "YES" || choice.ToUpper() == "Y")
+                        {
+                            processOptions();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Thank you for shopping with us");
+                            login relogin = new login();
+                            relogin.Login();
+                        }
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
+                        
                         break;
                 }
-            } while (choice >9);
+            } while (choice != 8);
         }
 
         public void productList()
@@ -112,7 +121,7 @@ namespace OnlineShopingStore.controller
             5. Add Review
             6. Remove Review
             7. Update Review
-            8. Exit
+            8. LogOut
 
 
 ");
