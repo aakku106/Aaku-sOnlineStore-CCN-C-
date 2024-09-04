@@ -68,6 +68,7 @@ namespace OnlineShopingStore.controller
             string email = Console.ReadLine();
             int rePassCounter = 0;
             string password = "";
+           a:
             if (rePassCounter > 3)
             {
                 Console.WriteLine("You have exceeded the maximum number of attempts");
@@ -75,7 +76,7 @@ namespace OnlineShopingStore.controller
             }
             else
             {
-            a:
+            
                 Console.WriteLine("Enter your password");
                 password = Console.ReadLine();
                 Console.WriteLine("Conform your password");
@@ -98,14 +99,14 @@ namespace OnlineShopingStore.controller
                 Address = address
             });
         }
-        int countiNoTimeOfLoginno = 0;
+        //int countiNoTimeOfLoginno = 0;
+            int countemail = 0;
         public void logIn()
         {
-            int countemail = 0;
-            if (countiNoTimeOfLoginno > 1)
-            {
-                Login();
-            }
+            //if (countiNoTimeOfLoginno > 1)
+            //{
+            //    Login();
+            //}
             Console.WriteLine("Enter your email");
             string email1 = Console.ReadLine();
             Console.WriteLine("Enter your password");
@@ -115,8 +116,8 @@ namespace OnlineShopingStore.controller
             if (user != null)
             {
                 Console.WriteLine("Login success");
-                ++ countiNoTimeOfLoginno;
-               
+                //++ countiNoTimeOfLoginno;
+
                 calling();
             }
             else

@@ -9,6 +9,8 @@ namespace OnlineShopingStore.model
     public class product_review
     {
         public int Id { get; set; }
+        public int productId { get; set; }
+        public int userId { get; set; }
         public double Prod_Rating { get; set; }
         public string Prod_Review { get; set; }
         public string Prod_Review_Date { get; set; }
@@ -17,6 +19,7 @@ namespace OnlineShopingStore.model
         {
             new product_review()
             {
+                userId=3,
                 Id = 1,
                 Prod_Rating = 4.5,
                 Prod_Review = "Good",
@@ -24,6 +27,7 @@ namespace OnlineShopingStore.model
             },
             new product_review()
             {
+                userId=2,
                 Id = 2,
                 Prod_Rating = 3.5,
                 Prod_Review = "Average",
@@ -31,6 +35,7 @@ namespace OnlineShopingStore.model
             },
             new product_review()
             {
+                userId=1,
                 Id = 3,
                 Prod_Rating = 5.0,
                 Prod_Review = "Excellent",
@@ -38,6 +43,7 @@ namespace OnlineShopingStore.model
             },
             new product_review()
             {
+                userId=4,
                 Id = 4,
                 Prod_Rating = 2.5,
                 Prod_Review = "Bad",

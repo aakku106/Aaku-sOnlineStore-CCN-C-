@@ -80,16 +80,17 @@ namespace OnlineShopingStore.controller
 
         public void productListii()
         {
-            //Console.WriteLine("Product List");
             foreach (var product in productList.products)
             {
+                var review = product_review.product_reviews.FirstOrDefault(x => x.Id == product.Id);
                 Console.WriteLine(
                     $"Id: {product.Id} " +
                     $"Name: {product.Name}" +
                     $" Price: {product.Price}" +
                     $" Brand: {product.Brand}" +
-                    $" Quantity: {product.Quantity}"
-                    );
+                    $" Quantity: {product.Quantity}" +
+                    $" Rating: {(review != null ? review.Prod_Rating.ToString() : "No Rating")}"
+                );
             }
         }
 
@@ -137,6 +138,8 @@ namespace OnlineShopingStore.controller
             foreach (var review in product_review.product_reviews)
             {
                 Console.WriteLine(
+                    $" Review by->" + userList.users.Find(x => x.Id == review.userId).Name+
+                    $" Product Name: {productList.products.Find(x => x.Id == review.Id).Name}"+
                     $"Id: {review.Id} " +
                     $"Rating: {review.Prod_Rating}" +
                     $" Review: {review.Prod_Review}" +
@@ -183,11 +186,11 @@ namespace OnlineShopingStore.controller
         public int choicee()
         {
             Console.WriteLine($@"Enter your choice
-            0. Print Options
+            0. Show Products
             1. Add Product
             2. Remove Product
             3. Update Product
-            4. Search Product
+            4. Show Review
             5. Add Review
             6. Remove Review
             7. Update Review
