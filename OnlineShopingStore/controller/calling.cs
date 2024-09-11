@@ -82,7 +82,10 @@ namespace OnlineShopingStore.controller
         {
             foreach (var product in productList.products)
             {
-                var review = product_review.product_reviews.FirstOrDefault(x => x.Id == product.Id);
+                //var review = product_review.product_reviews.FirstOrDefault(x => x.Id == product.Id);
+                var review = (from p in product_review.product_reviews
+                              where p.Id == product.Id
+                              select p).FirstOrDefault();
                 Console.WriteLine(
                     $"Id: {product.Id} " +
                     $"Name: {product.Name}" +

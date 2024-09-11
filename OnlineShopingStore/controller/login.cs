@@ -99,14 +99,14 @@ namespace OnlineShopingStore.controller
                 Address = address
             });
         }
-        //int countiNoTimeOfLoginno = 0;
+        int countiNoTimeOfLoginno = 0;
             int countemail = 0;
         public void logIn()
         {
-            //if (countiNoTimeOfLoginno > 1)
-            //{
-            //    Login();
-            //}
+            if (countiNoTimeOfLoginno > 1)
+            {
+                Login();
+            }
             Console.WriteLine("Enter your email");
             string email1 = Console.ReadLine();
             Console.WriteLine("Enter your password");
@@ -116,7 +116,7 @@ namespace OnlineShopingStore.controller
             if (user != null)
             {
                 Console.WriteLine("Login success");
-                //++ countiNoTimeOfLoginno;
+                ++ countiNoTimeOfLoginno;
 
                 calling();
             }
